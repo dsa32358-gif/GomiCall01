@@ -1,0 +1,16 @@
+{
+	"name": "GomiCall 飯田市鼎 切石・名古熊のごみ収集日カレンダー",
+	"short_name": "GomiCall",
+	"description": "飯田市鼎 切石・名古熊地区のごみ収集日をお知らせします",
+	"lang": "ja",
+	"start_url": "./",
+	"scope": "./",
+	"display": "standalone",
+	"background_color": "#aaa092",
+	"theme_color": "#aaa092",
+	"icons": [
+		{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+		{ "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+		{ "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+	]
+}

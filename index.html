@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GomiCall | 飯田市鼎 切石・名古熊のごみ収集日カレンダー</title>
+<meta name="description" content="飯田市鼎 切石・名古熊地区のごみ収集日を、今日から7日分まとめて確認できるカレンダーです。">
+<meta name="theme-color" content="#aaa092">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<!-- ヘッダー（サイト名・ロゴ） -->
+	<header class="site-header">
+		<h1 class="site-title">GomiCall</h1>
+		<p class="site-subtitle">飯田市鼎 切石・名古熊のごみ収集日カレンダー</p>
+	</header>
+	<!-- ヘッダー ここまで -->
+
+
+	<!-- カレンダー枠 -->
+	<div class="calendar-frame" id="calendar-frame">
+
+	<div class="calendar-well">
+
+	<!-- 今日のごみ -->
+		<div class="box box-8" aria-live="polite">
+		<div class="boxtext2">今日は</div>
+		<div class="boxdata"></div>
+		</div>
+	<!-- 今日のごみ ここまで -->
+
+	<!-- メイン -->
+	<main>
+
+		<div class="table-container">
+
+			<div class="box box-1">
+				<div class="boxtext"></div>
+				<div class="boxdate"></div>
+				<div class="boxdata"></div>
+			</div>
+
+			<div class="box box-2">
+				<div class="boxtext"></div>
+				<div class="boxdate"></div>
+				<div class="boxdata"></div>
+			</div>
+
+			<div class="box box-3">
+				<div class="boxtext"></div>
+				<div class="boxdate"></div>
+				<div class="boxdata"></div>
+			</div>
+
+			<div class="box box-4">
+				<div class="boxtext"></div>
+				<div class="boxdate"></div>
+				<div class="boxdata"></div>
+			</div>
+
+			<div class="box box-5">
+				<div class="boxtext"></div>
+				<div class="boxdate"></div>
+				<div class="boxdata"></div>
+			</div>
+
+			<div class="box box-6">
+				<div class="boxtext"></div>
+				<div class="boxdate"></div>
+				<div class="boxdata"></div>
+			</div>
+
+			<div class="box box-7">
+				<div class="boxtext"></div>
+				<div class="boxdate"></div>
+				<div class="boxdata"></div>
+			</div>
+
+		</div>
+
+		<div id="data-display"></div>
+
+
+	</main>
+	<!-- メイン ここまで -->
+
+	</div>
+	<!-- calendar-well ここまで -->
+
+	<!-- フルスクリーンボタン（枠の左下） -->
+	<div class="calendar-frame-footer">
+		<button id="fullscreen-button" type="button" aria-pressed="false">
+			<svg class="fs-icon" viewBox="0 0 24 24" width="1.1em" height="1.1em" aria-hidden="true">
+				<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"
+					fill="none" stroke="currentColor" stroke-width="2.2"
+					stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+			<span id="fullscreen-label">全画面表示</span>
+		</button>
+	</div>
+	<!-- フルスクリーンボタン ここまで -->
+
+	</div>
+	<!-- カレンダー枠 ここまで -->
+
+	<!-- 通知設定 -->
+	<section class="notification-settings">
+
+		<div class="notification-title">
+			通知設定
+		</div>
+
+		<div class="notification-row">
+
+			<label for="notification-hour">
+				通知時刻
+			</label>
+
+			<select id="notification-hour" aria-label="通知時刻（時）">
+				<!-- JavaScriptで0～23時を生成 -->
+			</select>
+
+			<span>時</span>
+
+			<select id="notification-minute" aria-label="通知時刻（分）">
+				<!-- JavaScriptで0～59分を生成 -->
+			</select>
+
+			<span>分</span>
+
+		</div>
+
+		<button id="save-notification-time">
+			通知時刻を設定
+		</button>
+
+		<div id="notification-status" aria-live="polite"></div>
+
+		<!-- スマートフォンへのプッシュ通知（push.js が制御） -->
+		<div class="push-box" id="push-box" hidden>
+			<div class="push-title">スマートフォンへのプッシュ通知</div>
+			<p class="push-message" id="push-message" aria-live="polite"></p>
+			<div class="push-buttons">
+				<button id="push-enable" type="button" hidden>通知を受け取る</button>
+				<button id="push-test" type="button" class="push-sub" hidden>テスト通知を表示</button>
+				<button id="push-disable" type="button" class="push-sub" hidden>通知を解除</button>
+			</div>
+		</div>
+		<!-- プッシュ通知 ここまで -->
+
+	</section>
+	<!-- 通知設定 ここまで -->
+
+
+	<!-- フッター（クレジット表記など） -->
+	<footer class="site-footer">
+		<p>2026 GomiCall<br>
+		   ○ ごみアイコン引用元<br>　icon-rainbow<br>　ICOOON MONO
+		</p>
+	</footer>
+	<!-- フッター ここまで -->
+
+	<script src="calendar-data.js"></script>
+	<script src="script.js"></script>
+	<script src="push.js"></script>
+
+</div>
+
+</body>
+</html>

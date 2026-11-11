@@ -1,0 +1,1113 @@
+@charset "UTF-8";
+
+/* ============================================================
+   基本設定
+============================================================ */
+
+html {
+    font-family: sans-serif;
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   ページ全体
+============================================================ */
+
+body {
+    font-size: 17px;
+
+    background-color: #aaa092;  /* 他の色 #ada79e #a39d95 #b3a48f #d1c8bc */
+
+    margin: 0;
+
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   全体
+============================================================ */
+
+.wrapper {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+}
+
+
+/* ============================================================
+   「今日は」
+============================================================ */
+
+.boxtext2 {
+    width: 100%;
+    height: 100%;
+
+    font-size: clamp(64px, 5.5vw, 200px);
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    line-height: 1;
+
+    overflow: visible;
+}
+
+
+/* ============================================================
+   曜日の文字
+============================================================ */
+
+.boxtext {
+    font-size: clamp(24px, 4.5vw, 75px);
+
+    color: #4d4d4d;
+
+    margin: 0;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   日付
+============================================================ */
+
+.boxdate {
+    font-size: clamp(20px, 2vw, 40px);
+
+    margin-bottom: 60px;
+
+    color: #64748b;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   データ表示
+============================================================ */
+
+.boxdata {
+    width: 100%;
+
+    height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: clamp(5px, 1vw, 15px);
+
+    font-size: clamp(16px, 2.1vw, 50px);
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    max-width: 100%;
+}
+
+
+/* ============================================================
+   ゴミ画像
+============================================================ */
+
+.boxdata img {
+    width: clamp(40px, 7vw, 120px);
+
+    height: clamp(40px, 7vw, 120px);
+
+    object-fit: contain;
+
+    flex-shrink: 1;
+
+    max-width: 100%;
+}
+
+
+/* ============================================================
+   ゴミの種類の文字
+============================================================ */
+
+.boxdata > div:not(.no-data) {
+    width: 100%;
+
+    min-height: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   予定がない日の表示
+============================================================ */
+
+.no-data {
+    width: 100%;
+
+    min-height: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #9ea4ac;
+
+    font-size: inherit;
+
+    line-height: 1.3;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   7日分のBOX
+============================================================ */
+
+.table-container {
+    width: calc(100% - 40px);
+
+    max-width: 1900px;
+
+    margin: 10px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, minmax(0, 1fr));
+
+    gap: clamp(3px, 0.7vw, 10px);
+
+    align-items: stretch;
+}
+
+
+/* ============================================================
+   box共通
+============================================================ */
+
+.box {
+    width: 100%;
+    min-width: 0;
+
+    height: 100%;
+    min-height: 810px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    gap: clamp(5px, 1vw, 20px);
+
+    background: #ffffff;
+
+    color: #334155;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: clamp(6px, 1vw, 16px);
+
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+
+    font-size: clamp(12px, 1.5vw, 20px);
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.08),
+        0 2px 6px rgba(15, 23, 42, 0.05);
+
+    overflow: hidden;
+
+    padding:
+        clamp(10px, 1.5vw, 20px)
+        5px;
+}
+
+
+/* ============================================================
+   各BOX
+============================================================ */
+
+.box-2{
+	opacity: 1;
+}
+
+.box-3{
+	opacity: 0.9;
+}
+
+.box-4{
+	opacity: 0.8;
+}
+
+.box-5{
+	opacity: 0.75;
+}
+
+.box-6{
+	opacity: 0.75;
+}
+
+.box-7{
+	opacity: 0.75;
+}
+
+
+/* ============================================================
+   BOX8
+============================================================ */
+
+.box-8 {
+	background-color: #ffff5b;
+	
+    width: calc(100% - 40px);
+    max-width: 1900px;
+
+	min-height: 230px;
+
+	margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(8px, 1vw, 15px);
+
+    overflow: hidden;
+    
+}
+
+
+/* 「今日は」 */
+
+.box-8 .boxtext2 {
+    width: auto;
+    height: auto;
+
+    flex: 0 0 auto;
+
+    display: block;
+
+    font-size: clamp(20px, 8.0vw, 200px);
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    margin: 0;
+}
+
+
+/* BOX8のゴミ情報 */
+
+.box-8 .boxdata {
+    width: auto !important;
+    max-width: none !important;
+    height: auto;
+
+    flex: 0 0 auto;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(8px, 1vw, 15px);
+
+    font-size: clamp(15px, 7.0vw, 350px);
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    overflow: visible;
+}
+
+
+/* BOX8のゴミ種類 */
+
+.box-8 .boxdata > div:not(.no-data) {
+    width: auto !important;
+
+    display: block;
+
+    flex: 0 0 auto;
+
+    white-space: nowrap !important;
+
+    overflow: visible !important;
+
+    line-height: 1.1;
+}
+
+
+/* BOX8のゴミ画像 */
+
+.box-8 .boxdata img {
+    width: clamp(70px, 10.0vw, 230px);
+
+    height: clamp(70px, 10.0vw, 230px);
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+/* ============================================================
+   曜日の色
+============================================================ */
+
+/* 日曜日 */
+
+.box.sunday .boxtext {
+    color: #e44736;
+}
+
+
+/* 土曜日 */
+
+.box.saturday .boxtext {
+    color: #2d59db;
+}
+
+
+/* ============================================================
+   スマホ用表示設定
+============================================================ */
+
+@media (max-width: 768px) {
+
+    /* ========================================================
+       7日分を縦一列
+    ======================================================== */
+
+    .table-container {
+        width: calc(100% - 16px);
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    /* ========================================================
+       BOX1～7
+    ======================================================== */
+
+    .box {
+        width: 100%;
+
+        height: 100px;
+
+        min-height: 0;
+
+        padding: 10px;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        gap: 0;
+    }
+
+
+    /* ========================================================
+       曜日
+    ======================================================== */
+
+    .boxtext {
+        font-size: clamp(32px, 9vw, 50px);
+
+        margin: 0;
+
+        width: 15%;
+
+        text-align: right;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ========================================================
+       日付
+    ======================================================== */
+
+    .boxdate {
+        font-size: clamp(20px, 5vw, 30px);
+
+        margin: 15px;
+
+        width: 22%;
+
+        text-align: left;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ========================================================
+       ゴミ画像＋文字
+    ======================================================== */
+
+    .boxdata {
+        font-size: clamp(22px, 5vw, 32px);
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        gap: 25px;
+
+        width: 48%;
+
+        flex: 0 0 48%;
+
+        min-width: 0;
+    }
+
+
+    /* ========================================================
+       ゴミ画像
+    ======================================================== */
+
+    .boxdata img {
+
+	margin: -15px;
+	
+        width: clamp(40px, 16vw, 70px);
+
+        height: clamp(40px, 16vw, 70px);
+
+        flex-shrink: 0;
+    }
+
+
+    /* ========================================================
+       ゴミの種類
+    ======================================================== */
+
+    .boxdata > div:not(.no-data) {
+        width: auto;
+
+        white-space: nowrap;
+
+        flex-shrink: 1;
+
+        overflow: hidden;
+    }
+
+
+    /* ========================================================
+       予定なし
+    ======================================================== */
+
+    .no-data {
+        font-size: inherit;
+
+        width: auto;
+
+        white-space: nowrap;
+    }
+
+
+    /* ========================================================
+       BOX8
+    ======================================================== */
+
+    .box-8 {
+        height: 120px;
+		padding-top: 20px;
+        padding-bottom: 20px;
+		margin-top: -5px;
+		margin-bottom: 0px;
+    }
+    
+    .box-8 .boxtext2 {
+        margin: 8px;
+    }
+
+
+    /* ========================================================
+       BOX8のゴミ画像
+    ======================================================== */
+
+    .box-8 .boxdata img {
+
+        margin: 2px;
+        
+        width: clamp(60px, 10vw, 75px);
+
+        height: clamp(60px, 10vw, 75px);
+
+        flex-shrink: 0;
+    }
+
+}
+
+
+/* ============================================================
+   通知設定
+============================================================ */
+
+.notification-settings {
+    width: calc(100% - 40px);
+    max-width: 1900px;
+
+    margin: 15px auto;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.08),
+        0 2px 6px rgba(15, 23, 42, 0.05);
+
+    text-align: center;
+
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+}
+
+
+/* タイトル */
+
+.notification-title {
+
+    font-size: clamp(22px, 3vw, 36px);
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    color: #334155;
+}
+
+
+/* 時刻設定部分 */
+
+.notification-row {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    font-size: clamp(18px, 2vw, 28px);
+}
+
+
+/* セレクトボックス */
+
+.notification-row select {
+
+    font-size: inherit;
+
+    padding: 8px 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    cursor: pointer;
+}
+
+
+/* 設定ボタン */
+
+#save-notification-time {
+
+    margin-top: 15px;
+
+    padding: 10px 25px;
+
+    font-size: clamp(16px, 1.8vw, 24px);
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+    background: #334155;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+
+#save-notification-time:hover {
+
+    opacity: 0.85;
+
+}
+
+
+/* 現在の設定 */
+
+#notification-status {
+
+    margin-top: 10px;
+
+    font-size: clamp(14px, 1.5vw, 20px);
+
+    color: #64748b;
+}
+
+
+/* プッシュ通知の登録欄 */
+
+.push-box {
+    margin-top: 25px;
+    padding-top: 20px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.push-box [hidden] {
+    display: none !important;
+}
+
+.push-title {
+    font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 700;
+
+    color: #334155;
+}
+
+.push-message {
+    max-width: 40em;
+
+    margin: 10px auto 0;
+
+    font-size: clamp(14px, 1.5vw, 20px);
+    line-height: 1.7;
+
+    color: #64748b;
+}
+
+.push-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.push-buttons button {
+    padding: 10px 25px;
+
+    font-family: inherit;
+    font-size: clamp(16px, 1.8vw, 24px);
+    font-weight: 600;
+
+    color: #ffffff;
+    background: #2f6f4e;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.push-buttons button.push-sub {
+    color: #334155;
+    background: #ffffff;
+
+    border: 1px solid #cbd5e1;
+}
+
+.push-buttons button:hover {
+    opacity: 0.85;
+}
+
+.push-buttons button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+/* スマートフォン */
+
+@media (max-width: 768px) {
+
+    .notification-settings {
+
+        width: calc(100% - 16px);
+
+        padding: 15px;
+
+        border-radius: 12px;
+
+    }
+
+    .notification-row {
+
+        gap: 5px;
+
+    }
+
+    .notification-row select {
+
+        padding: 6px 8px;
+
+    }
+
+}
+
+
+/* ============================================================
+   レイアウト変更：ヘッダー / 説明文 / 本体 / 説明文 / フッター
+============================================================ */
+
+/* ヘッダー（サイト名・ロゴ） */
+
+.site-header {
+    width: calc(100% - 40px);
+    max-width: 1900px;
+
+    margin: 0 auto;
+    padding: clamp(20px, 3vw, 40px) 0 10px;
+
+    text-align: center;
+
+    color: #2f2a24;
+}
+
+.site-title {
+    margin: 0;
+
+    font-size: clamp(36px, 6vw, 96px);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+}
+
+.site-subtitle {
+    margin: 10px 0 0;
+
+    font-size: clamp(14px, 2vw, 28px);
+    line-height: 1.4;
+}
+
+
+/* 説明文（上・下 共通） */
+
+.site-description {
+    width: calc(100% - 40px);
+    max-width: 1900px;
+
+    margin: 0 auto;
+    padding: clamp(15px, 2.5vw, 35px) 0;
+
+    text-align: center;
+
+    color: #2f2a24;
+
+    font-size: clamp(14px, 1.6vw, 24px);
+    line-height: 1.8;
+}
+
+.site-description p {
+    margin: 0;
+}
+
+
+/* メイン */
+
+main {
+    width: 100%;
+}
+
+
+/* フッター（クレジット表記など） */
+
+.site-footer {
+    width: calc(100% - 40px);
+    max-width: 1900px;
+
+    margin: 0 auto;
+    padding: clamp(15px, 2vw, 30px) 0 clamp(20px, 3vw, 40px);
+
+    border-top: 1px solid rgba(47, 42, 36, 0.25);
+
+    text-align: center;
+
+    color: #2f2a24;
+
+    font-size: clamp(12px, 1.3vw, 18px);
+    line-height: 1.6;
+}
+
+
+/* スマートフォン */
+
+@media (max-width: 768px) {
+
+    .site-header,
+    .site-description,
+    .site-footer {
+        width: calc(100% - 16px);
+    }
+
+    .site-header {
+        padding-top: 20px;
+    }
+
+}
+
+
+/* ============================================================
+   カレンダー枠（今日のごみ＋7日分を囲む別枠）※奥行きあり
+============================================================ */
+
+/* 外側：厚みのある台座 */
+
+.calendar-frame {
+    position: relative;
+
+    width: calc(100% - 40px);
+    max-width: 1900px;
+
+    margin: 10px auto 15px;
+
+    padding: clamp(10px, 1.5vw, 22px);
+
+    background: #d1c8bc;
+
+    border: none;
+    border-radius: clamp(12px, 1.8vw, 28px);
+
+    box-shadow: none;
+}
+
+
+/* 内側：くぼみ（中に沈んで見える部分） */
+
+.calendar-well {
+    padding: clamp(8px, 1.2vw, 18px);
+
+    background: #c2b8a8;
+
+    border-radius: clamp(8px, 1.2vw, 20px);
+
+    box-shadow: none;
+}
+
+
+/* 枠の中では、中身の横幅を枠いっぱいにする */
+
+.calendar-frame .box-8,
+.calendar-frame .table-container {
+    width: 100%;
+    max-width: none;
+}
+
+.calendar-frame .box-8 {
+    margin-top: 0;
+}
+
+.calendar-frame .table-container {
+    margin: 10px 0 0;
+}
+
+
+/* ============================================================
+   フルスクリーンボタン（枠の左下）
+============================================================ */
+
+.calendar-frame-footer {
+    display: flex;
+    justify-content: flex-start;
+
+    margin-top: clamp(10px, 1.2vw, 16px);
+}
+
+#fullscreen-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 18px;
+
+    font-family: inherit;
+    font-size: clamp(14px, 1.5vw, 20px);
+    font-weight: 600;
+
+    color: #ffffff;
+    background: #334155;
+
+    border: none;
+    border-radius: 10px;
+
+    box-shadow: none;
+
+    cursor: pointer;
+}
+
+#fullscreen-button:hover {
+    opacity: 0.9;
+}
+
+#fullscreen-button:active {
+    opacity: 0.8;
+}
+
+
+/* ============================================================
+   フルスクリーン表示中
+============================================================ */
+
+.calendar-frame.is-fullscreen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 9999;
+
+    width: 100%;
+    max-width: none;
+    height: 100%;
+
+    margin: 0;
+
+    overflow: auto;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+}
+
+/* 全画面中は外側の枠・くぼみを見せない（中身だけ表示） */
+
+.calendar-frame.is-fullscreen {
+    padding: 10px;
+
+    background: #aaa092;
+}
+
+.calendar-frame.is-fullscreen .calendar-well {
+    padding: 0;
+
+    background: transparent;
+
+    border-radius: 0;
+}
+
+/* ボタンに隠れないよう、下に余白 */
+
+.calendar-frame.is-fullscreen .calendar-well {
+    padding-bottom: 70px;
+}
+
+
+/* 下までスクロールしなくてもボタンが押せるように固定 */
+
+.calendar-frame.is-fullscreen .calendar-frame-footer {
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+
+    z-index: 10000;
+
+    margin: 0;
+}
+
+
+/* ============================================================
+   スマホ
+============================================================ */
+
+@media (max-width: 768px) {
+
+    .calendar-frame {
+        width: calc(100% - 16px);
+
+        padding: 8px;
+
+        margin-bottom: 15px;
+    }
+
+    .calendar-well {
+        padding: 6px;
+    }
+
+    .calendar-frame .table-container {
+        width: 100%;
+    }
+
+    .calendar-frame .box-8 {
+        margin-top: 0;
+    }
+
+}
