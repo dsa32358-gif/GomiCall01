@@ -10,8 +10,8 @@ music.preload = "auto";
 // 切り替え時刻（＝通知時刻）の設定
 // ============================================================
 
-const DEFAULT_SHIFT_HOUR = 14;
-const DEFAULT_SHIFT_MINUTE = 26;
+const DEFAULT_SHIFT_HOUR = 0;
+const DEFAULT_SHIFT_MINUTE = 0;
 
 // localStorageが使えない環境（プライベートモード等）でも止まらないようにする
 function loadSetting(key, fallback, max) {
