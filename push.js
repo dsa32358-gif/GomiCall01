@@ -11,10 +11,10 @@
 // ============================================================
 
 // Cloudflare Worker のURL（末尾の / は付けない）
-const PUSH_API_URL = "https://gomicall-push.dsa32358.workers.dev";
+const PUSH_API_URL = "";
 
 // VAPID公開鍵（キー生成ツールで作った「公開鍵」）
-const VAPID_PUBLIC_KEY = "BCrTwF7bJ9Uiq7iKN_hKJ-6TzAPcXiYFQH1huaBTFtNG7JugHb1knVSdGUf5P1HRlSnLDocJ2QSgaMfyFX2q9hc";
+const VAPID_PUBLIC_KEY = "";
 
 
 // ============================================================
@@ -218,7 +218,7 @@ async function enablePush() {
 
 		console.error(error);
 
-		showMessage("通知の登録に失敗しました。電波の良い場所で、もう一度お試しください。");
+		showMessage("通知の登録に失敗しました。（原因: " + error.name + " / " + error.message + "）");
 
 	} finally {
 
