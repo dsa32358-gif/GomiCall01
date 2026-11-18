@@ -794,6 +794,51 @@ body {
 }
 
 
+/* QRコード（プッシュ通知欄の右端。画面が広いときだけ表示） */
+
+.push-qr {
+    display: none;
+}
+
+@media (min-width: 769px) {
+
+    .push-box {
+        position: relative;
+
+        /* 左右に同じ余白を取り、文字とボタンは中央のまま保つ */
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+
+    .push-qr {
+        display: block;
+
+        position: absolute;
+        top: 20px;
+        right: 0;
+
+        width: 110px;
+
+        text-align: center;
+    }
+
+    .push-qr img {
+        display: block;
+
+        width: 110px;
+        height: 110px;
+    }
+
+    .push-qr-text {
+        margin-top: 4px;
+
+        font-size: 13px;
+
+        color: #64748b;
+    }
+}
+
+
 /* スマートフォン */
 
 @media (max-width: 768px) {
