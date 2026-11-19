@@ -16,6 +16,9 @@ const PUSH_API_URL = "https://gomicall-push.dsa32358.workers.dev";
 // VAPID公開鍵（キー生成ツールで作った「公開鍵」）
 const VAPID_PUBLIC_KEY = "BCrTwF7bJ9Uiq7iKN_hKJ-6TzAPcXiYFQH1huaBTFtNG7JugHb1knVSdGUf5P1HRlSnLDocJ2QSgaMfyFX2q9hc";
 
+// Service Workerの準備を待つ最大時間（ミリ秒）
+const PUSH_READY_TIMEOUT_MS = 10000;
+
 
 // ============================================================
 // 端末の状態を調べる
@@ -187,7 +190,14 @@ async function enablePush() {
 			return;
 		}
 
-		const registration = await navigator.serviceWorker.ready;
+		// ページ起動時に取得済みならそれを使う。まだなら、最大10秒だけ待つ
+		// （Service Workerの登録に失敗していると、待ち続けて画面が固まるため）
+		const registration = pushRegistration || await Promise.race([
+			navigator.serviceWorker.ready,
+			new Promise((resolve, reject) => {
+				setTimeout(() => reject(new Error("service worker timeout")), PUSH_READY_TIMEOUT_MS);
+			})
+		]);
 
 		pushRegistration = registration;
 
@@ -294,7 +304,7 @@ async function showTestNotification() {
 	await pushRegistration.showNotification(notification.title, {
 		body: notification.body,
 		icon: notification.icon,
-		badge: "icons/icon-192.png",
+		badge: "icons/badge-96.png",
 		tag: "gomicall-test",
 		data: { url: "./" }
 	});

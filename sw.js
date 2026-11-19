@@ -31,7 +31,7 @@ self.addEventListener("push", (event) => {
 		self.registration.showNotification(notification.title, {
 			body: notification.body,
 			icon: notification.icon,
-			badge: "icons/icon-192.png",
+			badge: "icons/badge-96.png",
 			tag: "gomicall-daily",   // 同じ日の通知は1件にまとめる
 			renotify: true,
 			data: { url: "./" }
